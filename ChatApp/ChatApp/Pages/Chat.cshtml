@@ -1,0 +1,36 @@
+﻿@page
+@model ChatApp.Pages.ChatModel
+@{
+    ViewData["Title"] = "Chat room";
+    var username = HttpContext.User.Identity.Name;
+}
+
+<div class="container mt-2">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div>
+                <div class="box-header with-border">
+                    <h4 class="box-title" style="color:dimgrey;">Welcome to the StockBot discussion room <label id="LoggedUser" class="text-success">@username</label></h4>
+                </div>
+                <div class="box-body">
+
+                    <div class="card">
+                        <div id="ChatMessagesDiv" class="card-body overflow-auto" style="height: 440px;">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group mb-3">
+                            <input id="MessageTextBox" type="text" class="form-control" placeholder="Please write your message. If you need a stock quote type /stock=stock_code" aria-label="Message" aria-describedby="Message">
+                            <button id="SendMessageButton" class="btn btn-primary" type="button">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>
+
