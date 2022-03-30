@@ -40,10 +40,6 @@ This image shows the structure and interaction between the components of the sto
 3. Run the migrations to create the database to store the users.
 **Note:** Make sure the appsettings.json has the correct connection string before running the migrations.
 
-```bash
-  dotnet ef database update
-```
-
 4. Install RabbitMQ server (to complete this part, every installation should be done with administrative account)
 **Note:** the project was built to work with RabbitMQ on localhost.
 * Download and install [erlang](https://www.erlang.org/downloads)
