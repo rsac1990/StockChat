@@ -69,6 +69,10 @@ function InitializeElements() {
         if (message.trim() == "") {
             alert("The message is required.");
         }
+        else if (message.trim().length > 100)
+        {
+            alert("The message is too long. Only 100 characters allowed");
+        }
         else {
 
             connection.invoke("SendMessage", user, message, currentDate).catch(function (err) {
